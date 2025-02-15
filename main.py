@@ -2,11 +2,11 @@ import argparse
 import sys
 from pathlib import Path
 
+from constants import Constants
 from src.db_handler import export_notes
 from src.extraction import extract_apkg
+from src.media_manager import export_media
 from src.utils import cleanup
-
-TEMP_DIR_PATH = Path('.temp')
 
 
 def main():
@@ -42,7 +42,7 @@ def main():
         )
 
     try:
-        extract_apkg(apkg_path, TEMP_DIR_PATH)
+        extract_apkg(apkg_path)
     except Exception as e:
         sys.exit(
             f'❌ >> Error: Extraction of .apkg archive failed.\n'
@@ -51,12 +51,12 @@ def main():
 
     print('✅ >> Extraction successful!')
 
-    # -- EXTRACT NOTES INTO JSON FILES -- #
+    # -- EXTRACT NOTES INTO JSON FILES (WITHIN OUTPUT DIRECTORY) -- #
     try:
         # Construct file path for database location, ensuring it exists before exporting notes.
-        db_path = TEMP_DIR_PATH / 'collection.anki21'
-        if not db_path.exists() or not db_path.is_file():
-            raise Exception('No valid "collection.anki21" database file was found in extracted .apkg contents')
+        db_path = Constants.TEMP_DIR_PATH / 'collection.anki21'
+        if not db_path.is_file():
+            raise Exception('No valid "collection.anki21" database file was found in extracted .apkg contents.')
 
         # Attempt to export notes to user-specified/default output directory:
         export_notes(db_path, output_path)
@@ -65,12 +65,19 @@ def main():
                  f'📝 >> The following exception was raised: {e}'
                  )
 
-    # -- TODO: Write logic to process extracted files. --
+    # -- MAP & REFORMAT/EXTRACT MEDIA FILES INTO OUTPUT DIRECTORY -- #
+    try:
+        export_media(output_path)
+    except Exception as e:
+        sys.exit(f'❌ >> Error: Could not export media files.\n'
+                 f'📝 >> The following exception was raised: {e}'
+                 )
 
     # -- CLEAN UP UNPACKED APKG ARCHIVE CONTENTS (delete from ".temp") -- #
     finally:
-        if not args.debug:  # Debug mode leaves extracted files behind for inspection.
-            cleanup(TEMP_DIR_PATH)
+        # Debug mode leaves extracted files behind for inspection.
+        if not args.debug:
+            cleanup(Constants.TEMP_DIR_PATH)
 
 
 if __name__ == '__main__':

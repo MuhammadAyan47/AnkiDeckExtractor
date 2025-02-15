@@ -1,15 +1,17 @@
 import zipfile
 from pathlib import Path
 
+from constants import Constants
+
 
 class ExtractionError(Exception):
     pass
 
 
-def extract_apkg(apkg_path: Path, extract_to: Path):
+def extract_apkg(apkg_path: Path):
     try:
         with zipfile.ZipFile(apkg_path, 'r') as zf:
-            zf.extractall(extract_to)
+            zf.extractall(Constants.TEMP_DIR_PATH)
     except zipfile.BadZipFile as e:
         raise ExtractionError(
             f'❌ >> The file {apkg_path} is not a valid .apkg archive.\n'

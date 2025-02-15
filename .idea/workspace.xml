@@ -4,11 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ db_handler.py is ready for test">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/media_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/media_manager.py" afterDir="false" />
-    </list>
+    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ completed media export step; everything just works now, so great!" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -68,7 +64,7 @@
       <workItem from="1739638761432" duration="2517000" />
       <workItem from="1739643298802" duration="1053000" />
       <workItem from="1739644370060" duration="151000" />
-      <workItem from="1739644632555" duration="1362000" />
+      <workItem from="1739644632555" duration="6349000" />
     </task>
     <task id="LOCAL-00001" summary="✨ basic CLI application working">
       <option name="closed" value="true" />
@@ -126,11 +122,38 @@
       <option name="project" value="LOCAL" />
       <updated>1739641268943</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="🧑‍💻 added --debug flag for dev. exp. + start media_manager.py">
+      <option name="closed" value="true" />
+      <created>1739646089418</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1739646089418</updated>
+    </task>
+    <task id="LOCAL-00009" summary="✨ completed media export step; everything just works now, so great!">
+      <option name="closed" value="true" />
+      <created>1739651367698</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1739651367698</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="✨ basic CLI application working" />
@@ -140,7 +163,9 @@
     <MESSAGE value="️ added (empty, for now) python files within src for later" />
     <MESSAGE value="✨ added cleanup function, changed extraction path to .temp" />
     <MESSAGE value="✨ db_handler.py is ready for test" />
-    <option name="LAST_COMMIT_MESSAGE" value="✨ db_handler.py is ready for test" />
+    <MESSAGE value="‍ added --debug flag for dev. exp. + start media_manager.py" />
+    <MESSAGE value="✨ completed media export step; everything just works now, so great!" />
+    <option name="LAST_COMMIT_MESSAGE" value="✨ completed media export step; everything just works now, so great!" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/AnkiDeckExtractor$db_handler.coverage" NAME="db_handler Coverage Results" MODIFIED="1739639366325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
