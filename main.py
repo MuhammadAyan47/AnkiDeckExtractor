@@ -10,14 +10,14 @@ def main():
     parser = argparse.ArgumentParser(
         description='Unpack .apkg archives (Anki Flashcard Deck) into their derivative directories & files/metadata.')
     parser.add_argument('apkg', type=str, help='Path to the apkg archive.')
-    parser.add_argument('output', type=str, help='Path to the output directory.', default='./output')
+    parser.add_argument('output', type=str, help='Path to the output directory.', default='./output', nargs='?')
 
     # Parse arguments for processing:
     args = parser.parse_args()
 
     # Convert input for paths into more workable format (Path from pathlib):
-    apkg_path = Path(args.apkg)
-    output_path = Path(args.output)
+    apkg_path = Path(args.apkg).expanduser().resolve()
+    output_path = Path(args.output).expanduser().resolve()
 
     # Cannot continue if APKG doesn't exist at provided path/is not a file; must also be of type .apkg.
     if not apkg_path.exists():
