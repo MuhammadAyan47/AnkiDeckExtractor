@@ -5,7 +5,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ added cleanup function, changed extraction path to .temp">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/db_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db_handler.py" afterDir="false" />
     </list>
@@ -65,7 +64,7 @@
       <updated>1739581224336</updated>
       <workItem from="1739581225363" duration="522000" />
       <workItem from="1739581791787" duration="2810000" />
-      <workItem from="1739638761432" duration="1450000" />
+      <workItem from="1739638761432" duration="2404000" />
     </task>
     <task id="LOCAL-00001" summary="✨ basic CLI application working">
       <option name="closed" value="true" />
