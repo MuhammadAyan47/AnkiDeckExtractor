@@ -44,6 +44,8 @@ def main():
             f'📝 >> The following exception was raised:\n{e}'
         )
 
+    print('✅ >> Extraction successful!')
+
     # -- TODO: Write logic to process extracted files. --
 
     exit(0)
