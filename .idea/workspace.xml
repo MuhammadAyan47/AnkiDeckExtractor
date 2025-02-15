@@ -4,10 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/__init__.py" afterDir="false" />
+    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ basic CLI application working">
+      <change afterPath="$PROJECT_DIR$/src/extraction.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,11 +63,24 @@
       <option name="presentableId" value="Default" />
       <updated>1739581224336</updated>
       <workItem from="1739581225363" duration="522000" />
-      <workItem from="1739581791787" duration="655000" />
+      <workItem from="1739581791787" duration="1508000" />
     </task>
+    <task id="LOCAL-00001" summary="✨ basic CLI application working">
+      <option name="closed" value="true" />
+      <created>1739582479313</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1739582479313</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="✨ basic CLI application working" />
+    <option name="LAST_COMMIT_MESSAGE" value="✨ basic CLI application working" />
   </component>
 </project>

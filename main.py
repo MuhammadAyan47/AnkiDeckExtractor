@@ -2,6 +2,8 @@ import argparse
 import sys
 from pathlib import Path
 
+from src.extraction import extract_apkg
+
 
 def main():
     # Define parser & relevant arguments to enable basic CLI functionality:
@@ -30,9 +32,20 @@ def main():
         output_path.mkdir(parents=True, exist_ok=True)
     except Exception as e:
         sys.exit(
-            f'❌ >> Error: Cannot create or access output directory at {output_path}.\n📝 The following exception was raised:\n{e}')
+            f'❌ >> Error: Cannot create or access output directory at {output_path}.'
+            f'📝 >> The following exception was raised:\n{e}'
+        )
 
-    # TODO: Write logic within src/ in packages, and then use them here to perform extraction/processing.
+    try:
+        extract_apkg(apkg_path, output_path)
+    except Exception as e:
+        sys.exit(
+            f'❌ >> Error: Extraction of .apkg archive failed.'
+            f'📝 >> The following exception was raised:\n{e}'
+        )
+
+    # -- TODO: Write logic to process extracted files. --
+
     exit(0)
 
 
