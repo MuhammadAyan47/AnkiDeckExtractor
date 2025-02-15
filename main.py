@@ -3,6 +3,9 @@ import sys
 from pathlib import Path
 
 from src.extraction import extract_apkg
+from src.utils import cleanup
+
+TEMP_DIR_PATH = Path('.temp')
 
 
 def main():
@@ -37,7 +40,7 @@ def main():
         )
 
     try:
-        extract_apkg(apkg_path, output_path)
+        extract_apkg(apkg_path, TEMP_DIR_PATH)
     except Exception as e:
         sys.exit(
             f'❌ >> Error: Extraction of .apkg archive failed.'
@@ -48,6 +51,7 @@ def main():
 
     # -- TODO: Write logic to process extracted files. --
 
+    # cleanup(TEMP_DIR_PATH)
     exit(0)
 
 

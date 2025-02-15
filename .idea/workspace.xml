@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="🏗️ added (empty, for now) python files within src for later" />
+    <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ added cleanup function, changed extraction path to .temp">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/db_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db_handler.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -31,6 +35,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.db_handler.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "master",
@@ -60,6 +65,7 @@
       <updated>1739581224336</updated>
       <workItem from="1739581225363" duration="522000" />
       <workItem from="1739581791787" duration="2810000" />
+      <workItem from="1739638761432" duration="1450000" />
     </task>
     <task id="LOCAL-00001" summary="✨ basic CLI application working">
       <option name="closed" value="true" />
@@ -101,7 +107,15 @@
       <option name="project" value="LOCAL" />
       <updated>1739584597027</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="✨ added cleanup function, changed extraction path to .temp">
+      <option name="closed" value="true" />
+      <created>1739640140547</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1739640140547</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -113,6 +127,10 @@
     <MESSAGE value=" added log message for successful extraction" />
     <MESSAGE value=" fixed ~ argument(s) pathing bug" />
     <MESSAGE value="️ added (empty, for now) python files within src for later" />
-    <option name="LAST_COMMIT_MESSAGE" value="️ added (empty, for now) python files within src for later" />
+    <MESSAGE value="✨ added cleanup function, changed extraction path to .temp" />
+    <option name="LAST_COMMIT_MESSAGE" value="✨ added cleanup function, changed extraction path to .temp" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/AnkiDeckExtractor$db_handler.coverage" NAME="db_handler Coverage Results" MODIFIED="1739639366325" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/src" />
   </component>
 </project>
