@@ -7,9 +7,7 @@
     <list default="true" id="a2398a94-54a7-4f70-8554-826a111d7bb3" name="Changes" comment="✨ db_handler.py is ready for test">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/db_handler.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/db_handler.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/extraction.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/extraction.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/utils.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/utils.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/media_manager.py" beforeDir="false" afterPath="$PROJECT_DIR$/src/media_manager.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -70,6 +68,7 @@
       <workItem from="1739638761432" duration="2517000" />
       <workItem from="1739643298802" duration="1053000" />
       <workItem from="1739644370060" duration="151000" />
+      <workItem from="1739644632555" duration="1362000" />
     </task>
     <task id="LOCAL-00001" summary="✨ basic CLI application working">
       <option name="closed" value="true" />

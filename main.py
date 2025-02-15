@@ -15,6 +15,7 @@ def main():
         description='Unpack .apkg archives (Anki Flashcard Deck) into their derivative directories & files/metadata.')
     parser.add_argument('apkg', type=str, help='Path to the apkg archive.')
     parser.add_argument('output', type=str, help='Path to the output directory.', default='./output', nargs='?')
+    parser.add_argument('--debug', action='store_true', help='Enable debug mode.', default=False)
 
     # Parse arguments for processing:
     args = parser.parse_args()
@@ -50,6 +51,7 @@ def main():
 
     print('✅ >> Extraction successful!')
 
+    # -- EXTRACT NOTES INTO JSON FILES -- #
     try:
         # Construct file path for database location, ensuring it exists before exporting notes.
         db_path = TEMP_DIR_PATH / 'collection.anki21'
@@ -65,9 +67,10 @@ def main():
 
     # -- TODO: Write logic to process extracted files. --
 
+    # -- CLEAN UP UNPACKED APKG ARCHIVE CONTENTS (delete from ".temp") -- #
     finally:
-        # Run cleanup - delete all remnants of unpacked .apkg file from .temp folder.
-        cleanup(TEMP_DIR_PATH)
+        if not args.debug:  # Debug mode leaves extracted files behind for inspection.
+            cleanup(TEMP_DIR_PATH)
 
 
 if __name__ == '__main__':
