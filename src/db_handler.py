@@ -1,6 +1,5 @@
 import json
 import sqlite3
-from ctypes.wintypes import tagRECT
 from pathlib import Path
 
 
@@ -16,8 +15,8 @@ def export_notes(db_path: Path, export_to: Path):
     try:
         export_to.mkdir(parents=True, exist_ok=True)
     except Exception as e:
-        raise DBExportError(f'❌ >> Failed to export notes to {export_to}'
-                            f'📝 >> The following exception was raised:\n{e}'
+        raise DBExportError(f'❌ >> Failed to export notes to {export_to}\n'
+                            f'📝 >> The following exception was raised: {e}'
                             )
 
     # Try to connect to .anki21 database (SQLite) file:
@@ -25,8 +24,8 @@ def export_notes(db_path: Path, export_to: Path):
         conn = sqlite3.connect(db_path)
         cursor = conn.cursor()
     except sqlite3.Error as e:
-        raise DBExportError(f'❌ >> Failed to connect to the database {db_path}'
-                            f'📝 >> The following exception was raised:\n{e}'
+        raise DBExportError(f'❌ >> Failed to connect to the database {db_path}\n'
+                            f'📝 >> The following exception was raised: {e}'
                             )
 
     # Execute SQL query to fetch notes from database:
@@ -35,8 +34,8 @@ def export_notes(db_path: Path, export_to: Path):
         rows = cursor.fetchall()
     except sqlite3.Error as e:
         conn.close()
-        raise DBExportError(f'❌ >> Failed to fetch notes from database.'
-                            f'📝 >> The following exception was raised:\n{e}'
+        raise DBExportError(f'❌ >> Failed to fetch notes from database.\n'
+                            f'📝 >> The following exception was raised: {e}'
                             )
 
     exported_count: int = 0
@@ -50,8 +49,8 @@ def export_notes(db_path: Path, export_to: Path):
                 'mid': mid,
                 'mod': mod,
                 'usn': usn,
-                'tags': tags.split('\x1f') if tags else [],
-                'fields': flds.split('\x1f') if flds else [],
+                'tags': tags.strip().split(' ') if tags else None,
+                'fields': [fld for fld in flds.split('\x1f') if fld] if flds else None,
                 'sort_field': sfld,
                 'csum': csum,
                 'flags': flags,
@@ -64,15 +63,15 @@ def export_notes(db_path: Path, export_to: Path):
                 json.dump(note_data, f, ensure_ascii=False, indent=4)
             exported_count += 1
         except Exception as e:
-            print(f'❌ >> Failed to export note with ID <{row[0]}>.'
-                  f'📝 >> The following exception was raised:\n{e}'
+            print(f'❌ >> Failed to export note with ID <{row[0]}>.\n'
+                  f'📝 >> The following exception was raised: {e}'
                   )
 
     try:
         conn.close()
     except Exception as e:
-        print(f'❌ >> Failed to close connection to database.'
-              f'📝 >> The following exception was raised:\n{e}'
+        print(f'❌ >> Failed to close connection to database.\n'
+              f'📝 >> The following exception was raised: {e}'
               )
 
     print(f'✅ >> Exported {exported_count} notes to {export_to}.')

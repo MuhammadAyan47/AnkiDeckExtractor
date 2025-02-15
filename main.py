@@ -2,6 +2,7 @@ import argparse
 import sys
 from pathlib import Path
 
+from src.db_handler import export_notes
 from src.extraction import extract_apkg
 from src.utils import cleanup
 
@@ -35,24 +36,38 @@ def main():
         output_path.mkdir(parents=True, exist_ok=True)
     except Exception as e:
         sys.exit(
-            f'❌ >> Error: Cannot create or access output directory at {output_path}.'
-            f'📝 >> The following exception was raised:\n{e}'
+            f'❌ >> Error: Cannot create or access output directory at {output_path}.\n'
+            f'📝 >> The following exception was raised: {e}'
         )
 
     try:
         extract_apkg(apkg_path, TEMP_DIR_PATH)
     except Exception as e:
         sys.exit(
-            f'❌ >> Error: Extraction of .apkg archive failed.'
-            f'📝 >> The following exception was raised:\n{e}'
+            f'❌ >> Error: Extraction of .apkg archive failed.\n'
+            f'📝 >> The following exception was raised: {e}'
         )
 
     print('✅ >> Extraction successful!')
 
+    try:
+        # Construct file path for database location, ensuring it exists before exporting notes.
+        db_path = TEMP_DIR_PATH / 'collection.anki21'
+        if not db_path.exists() or not db_path.is_file():
+            raise Exception('No valid "collection.anki21" database file was found in extracted .apkg contents')
+
+        # Attempt to export notes to user-specified/default output directory:
+        export_notes(db_path, output_path)
+    except Exception as e:
+        sys.exit(f'❌ >> Error: Extraction of .apkg archive failed.\n'
+                 f'📝 >> The following exception was raised: {e}'
+                 )
+
     # -- TODO: Write logic to process extracted files. --
 
-    # cleanup(TEMP_DIR_PATH)
-    exit(0)
+    finally:
+        # Run cleanup - delete all remnants of unpacked .apkg file from .temp folder.
+        cleanup(TEMP_DIR_PATH)
 
 
 if __name__ == '__main__':
